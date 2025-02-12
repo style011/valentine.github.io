@@ -34,6 +34,25 @@
       </label>
     </div>
   </div>
-  <button class="button" onclick="location.href='lastpage.html'">Last page</button>
+  <button id="submitButton" class="button">Last page</button>
+
+  <script>
+    // Get the button element
+    const submitButton = document.getElementById('submitButton');
+    
+    // Add event listener for the button click
+    submitButton.addEventListener('click', function() {
+      // Get the selected activity
+      const selectedActivity = document.querySelector('input[name="activities"]:checked');
+
+      // Check if an activity is selected
+      if (selectedActivity) {
+        // Redirect to the next page
+        location.href = 'lastpage.html';
+      } else {
+        alert('Please select an activity before proceeding!');
+      }
+    });
+  </script>
 </body>
 </html>
